@@ -1,8 +1,47 @@
 <div id="planetDetail" class="modal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body" (ngModel)="planet">
+                <button type="button" class="btn-close bg-white p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+
+                <img src="{{ planet.image }}" />
+
+                <h1 class="title-h1 mt-5 mb-5">{{ planet.name }}</h1>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="col-12 p-0 pt-2 bg-white ">
+                            Rotation Period <h5 class="title-h5">{{ planet.rotation_period }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12 p-0 pt-2 bg-white ">
+                            Orbital Period <h5 class="title-h5">{{ planet.orbital_period }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12 p-0 pt-2 bg-white ">
+                            Climate <h5 class="title-h5">{{ planet.climate }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12 p-0 pt-2 bg-white ">
+                            Terrain <h5 class="title-h5">{{ planet.terrain }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12 p-0 pt-2 bg-white ">
+                            Gravity <h5 class="title-h5">{{ planet.gravity }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12 p-0 pt-2 bg-white ">
+                            Population <h5 class="title-h5">{{ planet.population }}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <p>{{ planet.description }}</p>
                 
             </div>
         </div>

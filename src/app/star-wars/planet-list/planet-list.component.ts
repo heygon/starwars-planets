@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlanetDetailComponent } from "../planet-detail/planet-detail.component";
+import { PlanetsService } from "../planets.service";
 
 @Component({
   selector: 'app-planet-list',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanetListComponent  {
 
-  constructor() { }
+  constructor() {}
 
   public planets = [
     {
@@ -85,10 +87,18 @@ export class PlanetListComponent  {
   ngOnInit(): void {
 
 
-
+    this.getPlanets().subscribe((planets: any) => {
+      console.log(planets);
+    });
 
 
 
   }
+
+  planetDetail(id : string){
+    console.log(id)
+    PlanetDetailComponent.getDetails(id);
+  }
+  
 
 }
