@@ -9,7 +9,9 @@ import { PlanetsService } from "../planets.service";
 })
 export class PlanetListComponent  {
 
-  constructor() {}
+  constructor(
+    private service : PlanetsService
+  ) {}
 
   public planets = [
     {
@@ -87,10 +89,31 @@ export class PlanetListComponent  {
   ngOnInit(): void {
 
 
-    this.getPlanets().subscribe((planets: any) => {
-      console.log(planets);
-    });
+    //PlanetsService.
 
+    this.service.getPlanets().subscribe((data) => {
+      console.log(data);
+      
+      data.map((e: any) => {
+        this.planets.push(
+          {
+            id     : e.id,
+            image  : e.image,
+            name   : e.name,
+            resume : e.resume            
+          }
+        )
+      })
+      
+
+    });
+    
+
+    /* this.getPlanets().subscribe((planets: any) => {
+      console.log(planets);
+    }); */
+
+    
 
 
   }

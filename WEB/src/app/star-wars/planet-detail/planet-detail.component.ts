@@ -9,9 +9,7 @@ import { PlanetsService } from './../planets.service';
   styleUrls: ['./planet-detail.component.scss']
 })
 export class PlanetDetailComponent {
-  static getDetails(id: string) {
-    throw new Error('Method not implemented.');
-  }
+  
 
   constructor() { }
   
@@ -38,7 +36,7 @@ export class PlanetDetailComponent {
 
   }
 
-  getDetails(id : string){
+  static getDetails(id : string){
     console.log(id)
   }
 
