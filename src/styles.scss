@@ -3,9 +3,9 @@ body{
     padding:0px;
     height: 100vh;
     width: 100vw;
-    background: #3f3f3f url(./assets/img/sky.jpeg) top center no-repeat;
+    background: #3f3f3f url(./assets/img/sky.jpeg) top center no-repeat fixed;
     background-size: cover;
-    color: #fff;
+    color: #cacaca;
 }
 @font-face {
     font-family: jedi;
@@ -38,6 +38,8 @@ body{
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
+    padding: 0px !important;
+    transition: .5s;
 }
 @-moz-keyframes spin { 
     100% { -moz-transform: rotate(360deg); } 
@@ -50,4 +52,10 @@ body{
         -webkit-transform: rotate(360deg); 
         transform:rotate(360deg); 
     } 
+}
+.plaetcard .btn{
+    font-family: jedi;
+}
+.plaetcard p{
+    height: 100px;
 }

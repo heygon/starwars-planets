@@ -1,12 +1,16 @@
 <div class="row">
-    <div class="plaetcard col-3 card">
-        <div class="card-content">
-            <img src="../../../assets/img/Tatooine.webp" class="col-12"/>
-            <h5 class="col-12">Tatoine</h5>
-            <p class="col-12">
-                Tatooine was a desert world and the first planet in the binary Tatoo star system...
-            </p>
-            <div class="btn btn-primary col-12">See details</div>
+    <div class=" col-3" *ngFor="let planet of planets;">
+        <div class="card col-12 plaetcard">
+            <div class="card-content">
+                <img src="{{ planet.image }}" class="col-12"/>
+                <h5 class="col-12 title-h5">{{ planet.name }}</h5>
+                <p class="col-12">
+                    {{ planet.resume }}
+                </p>
+                <div id="planetDetails/{{ planet.id }}" class="btn btn-warning col-12" data-bs-toggle="modal" data-bs-target="#planetDetail">
+                    See details
+                </div>
+            </div>
         </div>
     </div>
 </div>
