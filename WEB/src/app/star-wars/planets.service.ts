@@ -5,17 +5,15 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class PlanetsService {
 
-  //planetApiUrl = 'https://swapi.dev/api/planets';
-  planetApiUrl = 'https://akabab.github.io/starwars-api/api/all.json';
-  planetApiUrlDetails = 'https://private-anon-b97bf46abd-starhub.apiary-mock.com/api/planets/';
+  api = "http://localhost:3005";
 
   constructor(private http: HttpClient) {}
 
   getPlanets(): Observable<any> {
-    return this.http.get(this.planetApiUrl);
+    return this.http.get(this.api+'/planet/list');
   }
-  getPlanetsDetail(name:String): Observable<any> {
-    return this.http.get(this.planetApiUrlDetails+''+name);
+  getPlanetsDetail(id:String): Observable<any> {
+    return this.http.get(this.api+'/'+id);
   }
 
 }

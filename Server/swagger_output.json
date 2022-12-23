@@ -1,0 +1,159 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "CotaPay",
+    "description": "Endpoints de pagamentos"
+  },
+  "host": "b6clr603e5.execute-api.us-east-2.amazonaws.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Pagamentos",
+      "description": "Api para consulta e pagamento de débitos"
+    },
+    {
+      "name": "Usuários",
+      "description": "Enpoints relacionados aos usuários do app Cotabank"
+    },
+    {
+      "name": "Caema",
+      "description": "Enpoints para culsultar os dados fornecidos pela Caema"
+    },
+    {
+      "name": "Transações",
+      "description": "Armazena o histórico das transações efetuadas pelo usuário"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://ofsec72a1f.execute-api.us-east-2.amazonaws.com"
+    }
+  },
+  "paths": {
+    "/planet/list": {
+      "get": {
+        "tags": [
+          "Planets"
+        ],
+        "summary": "List of planets",
+        "description": "<h1>List of planets</h1>",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "  <h4>Data model</h4>  ",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/planet/{id}": {
+      "get": {
+        "tags": [
+          "Planets"
+        ],
+        "summary": "Planet details",
+        "description": "<h1>Planet details</h1>",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/planet/populate": {
+      "get": {
+        "tags": [
+          "Planets"
+        ],
+        "summary": "Populate planets list",
+        "description": "<h1>Populate planets list</h1>",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "   <h4>Data model</h4>  ",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "function"
+                },
+                "rotation_period": {
+                  "type": "function"
+                },
+                "orbital_period": {
+                  "type": "function"
+                },
+                "diameter": {
+                  "type": "function"
+                },
+                "climate": {
+                  "type": "function"
+                },
+                "gravity": {
+                  "type": "function"
+                },
+                "terrain": {
+                  "type": "function"
+                },
+                "surface_water": {
+                  "type": "function"
+                },
+                "population": {
+                  "type": "function"
+                },
+                "description": {
+                  "type": "function"
+                },
+                "image": {
+                  "type": "function"
+                },
+                "region": {
+                  "type": "function"
+                },
+                "system": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    }
+  }
+}
