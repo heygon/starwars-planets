@@ -21,9 +21,9 @@ export class PlanetListComponent  {
     //PlanetsService.
 
     this.service.getPlanets().subscribe((data) => {
-      console.log(data);
+      console.log(data.planet);
       
-      data.map((e: any) => {
+      data.planet.map((e: any) => {
         this.planets.push(
           {
             id     : e.id,
@@ -52,5 +52,5 @@ export class PlanetListComponent  {
     PlanetDetailComponent.getDetails(id);
   }
   
-
 }
+

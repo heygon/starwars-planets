@@ -3,8 +3,6 @@ frameworkVersion: "3"
 
 custom:
   BUCKET: "EVE"
-  ASSESSKEY: "AKIAYSMBM5OAH2OGE26Q"
-  SCRETKEY: "lPMm1bvz3jdh8fBRNy3Th5nZOEL7VkwV48X/uCrN"
   region: "us-east-2"
 
 provider:
@@ -15,8 +13,6 @@ provider:
   memorySize: 1024
 
   environment:
-    ASSESSKEY: ${self:custom.ASSESSKEY}
-    SCRETKEY: ${self:custom.SCRETKEY}
     region: ${self:custom.region}
 
 functions:

@@ -182,7 +182,8 @@ module.exports = {
         planets.map((e) => {
 
             console.log('🔴 -> '+ e.Name);
-            //console.log('http://private-anon-b97bf46abd-starhub.apiary-mock.com/api/planets/'+e.Name);
+            console.log('http://private-anon-b97bf46abd-starhub.apiary-mock.com/api/planets/'+e.Name);
+            /*
             axios.get('http://private-anon-b97bf46abd-starhub.apiary-mock.com/api/planets/'+e.Name)
             .then(async (data) => {
                 //console.log(data.data)
@@ -192,13 +193,14 @@ module.exports = {
                 e.region =  data.data.region;
                 e.system =  data.data.system;
 
-                e.save();
+                //e.save();
 
                 
             })
             .catch((error) => {
                 console.log(error)
             })
+            */
 
             
 
