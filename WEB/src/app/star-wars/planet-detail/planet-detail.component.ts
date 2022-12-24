@@ -1,7 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanetsService } from "../planets.service";
 
-
+/* interface planet  {
+  name: "",
+  rotation_period: "",
+  orbital_period: "",
+  diameter: "",
+  climate: "",
+  gravity: "",
+  terrain: "",
+  surface_water: "",
+  population: "",
+  image: "",
+  description: "",
+} */
 
 @Component({
   selector: 'app-planet-detail',
@@ -15,7 +27,7 @@ export class PlanetDetailComponent {
     private service : PlanetsService
   ) {}
   
-  planet = {
+  public planet=  {
     name: "",
     rotation_period: "",
     orbital_period: "",
@@ -27,18 +39,16 @@ export class PlanetDetailComponent {
     population: "",
     image: "",
     description: "",
-  }
+  };
+ 
 
   
   ngOnInit(): void {
-    
-  }
-
-  getDetails(id : string){
-    console.log('->'+id)
-
+    let getid = [];
+    getid = window.location.href.split('/');
+    let id:string = getid[ getid.length -1 ]
+    console.log(id)
     this.service.getPlanetsDetail(id).subscribe((data : any) => {
-      console.log(data.planet);
       
       this.planet = {
         name: data.planet.Name,
@@ -55,7 +65,7 @@ export class PlanetDetailComponent {
       }
 
       console.log(this.planet);
-      
+      return this.planet;
       
     });
 

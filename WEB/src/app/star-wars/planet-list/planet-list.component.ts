@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanetDetailComponent } from "../planet-detail/planet-detail.component";
 import { PlanetsService } from "../planets.service";
-
-
 
 @Component({
   selector: 'app-planet-list',
@@ -13,20 +10,14 @@ export class PlanetListComponent  {
 
   
   constructor(
-    private service : PlanetsService,
-    //private details : PlanetDetailComponent
+    private service : PlanetsService
   ) {}
-
-  details:PlanetDetailComponent = new PlanetDetailComponent(this.service);
 
   public planets = Array();
 
   ngOnInit(): void {
 
-
     this.service.getPlanets().subscribe((data) => {
-      console.log(data.planet);
-      
       data.planet.map((e: any) => {
         this.planets.push(
           {
@@ -41,9 +32,6 @@ export class PlanetListComponent  {
 
   }
 
-  planetDetail(id : string){
-    this.details.getDetails(id);
-  }
   
 }
 

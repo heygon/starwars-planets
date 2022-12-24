@@ -1,49 +1,45 @@
-<div id="planetDetail" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body" >
-                <button type="button" class="btn-close bg-white p-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                
+<div class="col-8 offset-2 planetDetails">
+    <a href="../" class="col-2 btn btn-warning ">Back</a>
+    
+    <div class="col-12">&nbsp;</div>
 
-                <img src="{{ planet.image }}" />
+    <img src="{{ planet.image }}" class="col-4 offset-4" />
 
-                <h1 class="title-h1 mt-5 mb-5">{{ planet.name }}</h1>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="col-12 p-0 pt-2 bg-white ">
-                            Rotation Period <h5 class="title-h5">{{ planet.rotation_period }}</h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12 p-0 pt-2 bg-white ">
-                            Orbital Period <h5 class="title-h5">{{ planet.orbital_period }}</h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12 p-0 pt-2 bg-white ">
-                            Climate <h5 class="title-h5">{{ planet.climate }}</h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12 p-0 pt-2 bg-white ">
-                            Terrain <h5 class="title-h5">{{ planet.terrain }}</h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12 p-0 pt-2 bg-white ">
-                            Gravity <h5 class="title-h5">{{ planet.gravity }}</h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12 p-0 pt-2 bg-white ">
-                            Population <h5 class="title-h5">{{ planet.population }}</h5>
-                        </div>
-                    </div>
-                </div>
+    <h1 class="title-h1 mt-5 mb-5">{{ planet.name }}</h1>
 
-                <p>{{ planet.description }}</p>
-                
+    <div class="row">
+        <div class="col-4">
+            <div class="col-12 p-0 pt-2 bg-white ">
+                Rotation Period <h5 class="title-h5">{{ planet.rotation_period }}</h5>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-12 p-0 pt-2 bg-white ">
+                Orbital Period <h5 class="title-h5">{{ planet.orbital_period }}</h5>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-12 p-0 pt-2 bg-white ">
+                Climate <h5 class="title-h5">{{ planet.climate }}</h5>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-12 p-0 pt-2 bg-white ">
+                Terrain <h5 class="title-h5">{{ planet.terrain }}</h5>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-12 p-0 pt-2 bg-white ">
+                Gravity <h5 class="title-h5">{{ planet.gravity }}</h5>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-12 p-0 pt-2 bg-white ">
+                Diameter <h5 class="title-h5">{{ planet.diameter }}Km</h5>
             </div>
         </div>
     </div>
+
+    <p>{{ planet.description }}</p>
+
 </div>
