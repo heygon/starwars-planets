@@ -1,0 +1,39 @@
+.plaetcard{
+    background: rgb(63, 63, 63, 0.5);
+}
+.plaetcard .preplanets{
+    width: 100%;
+    overflow: hidden;
+}
+.plaetcard img{
+    width: 100%;
+    border-radius: 50%;
+}
+.plaetcard:hover img{
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    padding: 0px !important;
+    transition: .5s;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+.plaetcard .btn{
+    font-family: jedi;
+}
+.plaetcard p{
+    min-height: 100px;
+}
+
+

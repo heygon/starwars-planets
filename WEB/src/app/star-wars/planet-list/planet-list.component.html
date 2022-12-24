@@ -2,13 +2,15 @@
     <div class=" col-3" *ngFor="let planet of planets;">
         <div class="card col-12 plaetcard">
             <div class="card-content">
-                <img src="{{ planet.image }}" class="col-12"/>
+                <div class="preplanets">
+                    <img src="{{ planet.image }}"/>
+                </div>
                 <h5 class="col-12 title-h5">{{ planet.name }}</h5>
                 <p class="col-12">
                     {{ planet.resume }}
                 </p>
                 <!-- <div (onClick)="planetDetail(planet.id )" class="btn btn-warning col-12" data-bs-toggle="modal" data-bs-target="#planetDetail"> -->
-                <div (click)="planetDetail(planet.id )" class="btn btn-warning col-12">
+                <div (click)="planetDetail(planet.id )" class="btn btn-warning col-12" data-bs-toggle="modal" data-bs-target="#planetDetail">
                     See details
                 </div>
             </div>

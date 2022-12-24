@@ -13,7 +13,7 @@ export class PlanetsService {
     return this.http.get(this.api+'/planet/list');
   }
   getPlanetsDetail(id:String): Observable<any> {
-    return this.http.get(this.api+'/'+id);
+    return this.http.get(this.api+'/planet/'+id);
   }
 
 }

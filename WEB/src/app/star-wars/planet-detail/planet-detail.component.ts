@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanetsService } from './../planets.service';
+import { PlanetsService } from "../planets.service";
 
 
 
@@ -11,7 +11,9 @@ import { PlanetsService } from './../planets.service';
 export class PlanetDetailComponent {
   
 
-  constructor() { }
+  constructor(
+    private service : PlanetsService
+  ) {}
   
   planet = {
     name: "",
@@ -23,21 +25,40 @@ export class PlanetDetailComponent {
     terrain: "",
     surface_water: "",
     population: "",
-    residents: "",
-    films: "",
-    created: "",
-    edited: "",
-    url: "",
     image: "",
-    description: ""
+    description: "",
   }
 
+  
   ngOnInit(): void {
-
+    
   }
 
-  static getDetails(id : string){
-    console.log(id)
+  getDetails(id : string){
+    console.log('->'+id)
+
+    this.service.getPlanetsDetail(id).subscribe((data : any) => {
+      console.log(data.planet);
+      
+      this.planet = {
+        name: data.planet.Name,
+        rotation_period: data.planet.rotation_period,
+        orbital_period: data.planet.orbital_period,
+        diameter: data.planet.diameter,
+        climate: data.planet.climate,
+        gravity: data.planet.gravity,
+        terrain: data.planet.terrain,
+        surface_water: data.planet.surface_water,
+        population: data.planet.population,
+        image: data.planet.image,
+        description: data.planet.description
+      }
+
+      console.log(this.planet);
+      
+      
+    });
+
   }
 
 }

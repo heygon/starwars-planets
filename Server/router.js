@@ -12,7 +12,7 @@ const planets = require('./controllers/planets');
 
 //! Planets
 routes.get('/planet/list', planets.list);
-routes.get('/planet/{id}', planets.details);
+routes.get('/planet/:id', planets.details);
 routes.get('/planet/populate', planets.populate);
 routes.get('/planet/getDataFromApi', planets.getDataFromApi);
 

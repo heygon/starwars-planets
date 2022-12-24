@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PlanetDetailComponent } from "../planet-detail/planet-detail.component";
 import { PlanetsService } from "../planets.service";
 
+
+
 @Component({
   selector: 'app-planet-list',
   templateUrl: './planet-list.component.html',
@@ -9,16 +11,18 @@ import { PlanetsService } from "../planets.service";
 })
 export class PlanetListComponent  {
 
+  
   constructor(
-    private service : PlanetsService
+    private service : PlanetsService,
+    //private details : PlanetDetailComponent
   ) {}
+
+  details:PlanetDetailComponent = new PlanetDetailComponent(this.service);
 
   public planets = Array();
 
   ngOnInit(): void {
 
-
-    //PlanetsService.
 
     this.service.getPlanets().subscribe((data) => {
       console.log(data.planet);
@@ -26,30 +30,19 @@ export class PlanetListComponent  {
       data.planet.map((e: any) => {
         this.planets.push(
           {
-            id     : e.id,
+            id     : e._id,
             image  : e.image,
-            name   : e.name,
-            resume : e.resume            
+            name   : e.Name,
+            resume : e.description.substring(1,140)+'...'
           }
         )
       })
-      
-
     });
-    
-
-    /* this.getPlanets().subscribe((planets: any) => {
-      console.log(planets);
-    }); */
-
-    
-
 
   }
 
   planetDetail(id : string){
-    console.log(id)
-    PlanetDetailComponent.getDetails(id);
+    this.details.getDetails(id);
   }
   
 }
