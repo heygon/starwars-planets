@@ -16,7 +16,6 @@ export class PlanetListComponent  {
   public planets = Array();
 
   ngOnInit(): void {
-
     this.service.getPlanets().subscribe((data) => {
       data.planet.map((e: any) => {
         this.planets.push(
@@ -29,9 +28,6 @@ export class PlanetListComponent  {
         )
       })
     });
-
-  }
-
-  
+  }  
 }
 

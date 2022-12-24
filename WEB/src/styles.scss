@@ -28,27 +28,3 @@ body{
     max-width:none;
     width: 100%;
 }
-
-
-
-
-
-
-#planetDetail .btn-close{
-    float: right;
-    border-radius: 50%;
-}
-#planetDetail .modal-content{
-    background: rgb(63, 63, 63, 0.7);
-}
-#planetDetail img{
-    border-radius: 50%;
-}
-#planetDetail .col-4 .col-12{
-    //background-color: rgb(255, 255, 255, 0.7);
-    border-radius: 15px;
-    height: 70px;
-    text-align: center;
-    margin-bottom: 10px;
-    color:#555
-}

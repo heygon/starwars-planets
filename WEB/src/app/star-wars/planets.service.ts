@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 export class PlanetsService {
 
   api = "http://localhost:3005";
-
   constructor(private http: HttpClient) {}
 
   getPlanets(): Observable<any> {

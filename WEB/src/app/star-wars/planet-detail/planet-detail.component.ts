@@ -1,19 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanetsService } from "../planets.service";
 
-/* interface planet  {
-  name: "",
-  rotation_period: "",
-  orbital_period: "",
-  diameter: "",
-  climate: "",
-  gravity: "",
-  terrain: "",
-  surface_water: "",
-  population: "",
-  image: "",
-  description: "",
-} */
 
 @Component({
   selector: 'app-planet-detail',
@@ -44,10 +31,8 @@ export class PlanetDetailComponent {
 
   
   ngOnInit(): void {
-    let getid = [];
-    getid = window.location.href.split('/');
-    let id:string = getid[ getid.length -1 ]
-    console.log(id)
+    let id:any = window.location.href.split('/'); // Collect id from url
+    id = id[id.length -1];
     this.service.getPlanetsDetail(id).subscribe((data : any) => {
       
       this.planet = {
@@ -63,12 +48,7 @@ export class PlanetDetailComponent {
         image: data.planet.image,
         description: data.planet.description
       }
-
-      console.log(this.planet);
       return this.planet;
-      
     });
-
   }
-
 }
