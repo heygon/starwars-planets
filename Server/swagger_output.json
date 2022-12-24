@@ -2,27 +2,15 @@
   "swagger": "2.0",
   "info": {
     "version": "0.0.1",
-    "title": "CotaPay",
-    "description": "Endpoints de pagamentos"
+    "title": "EVE Star Wars API",
+    "description": "Endpoints of the planets"
   },
   "host": "b6clr603e5.execute-api.us-east-2.amazonaws.com",
   "basePath": "/",
   "tags": [
     {
-      "name": "Pagamentos",
-      "description": "Api para consulta e pagamento de débitos"
-    },
-    {
-      "name": "Usuários",
-      "description": "Enpoints relacionados aos usuários do app Cotabank"
-    },
-    {
-      "name": "Caema",
-      "description": "Enpoints para culsultar os dados fornecidos pela Caema"
-    },
-    {
-      "name": "Transações",
-      "description": "Armazena o histórico das transações efetuadas pelo usuário"
+      "name": "Planets",
+      "description": "Endpoint to view the planets in data base"
     }
   ],
   "schemes": [
@@ -36,7 +24,7 @@
     },
     "petstore_auth": {
       "type": "oauth2",
-      "authorizationUrl": "https://ofsec72a1f.execute-api.us-east-2.amazonaws.com"
+      "authorizationUrl": "https://3f11mdawqa.execute-api.us-east-2.amazonaws.com"
     }
   },
   "paths": {

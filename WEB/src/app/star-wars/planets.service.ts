@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class PlanetsService {
 
-  api = "http://localhost:3005";
+  api = "https://3f11mdawqa.execute-api.us-east-2.amazonaws.com";
   constructor(private http: HttpClient) {}
 
   getPlanets(): Observable<any> {
